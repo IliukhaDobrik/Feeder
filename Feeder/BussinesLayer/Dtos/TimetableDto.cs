@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace BussinesLayer.Dtos
 {
-    public sealed class Timetable
+    public sealed class TimetableDto
     {
-        public Guid TimeTableId { get; set; }
         public string TimeTableName { get; set; }
         public DateTime Date { get; set; }
         public Feeder TypeFeeder { get; set; }

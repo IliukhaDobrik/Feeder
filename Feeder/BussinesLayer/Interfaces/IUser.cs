@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using BussinesLayer.Dtos;
+using Entities;
 using Entities.Feeders;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,9 @@ namespace BussinesLayer.Interfaces
         Task AddFeeder(Feeder feeder);
         Task AddMark(string mark);
         Task CreateTimetable();
-        Task UpdateTimetable(string name); 
-        Task DeleteTimetable(string name);
+        Task<TimetableDto> GetTimetable(string nameOfTimetable);
+        Task UpdateTimetable(string nameOfTimetable); 
+        Task DeleteTimetable(string nameOfTimetable);
         Task Monitoring();
         Task<IReadOnlyCollection<Log>> GetLogs();
         Task ManualControl();

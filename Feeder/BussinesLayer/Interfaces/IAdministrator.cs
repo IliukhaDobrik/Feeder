@@ -10,6 +10,8 @@ namespace BussinesLayer.Interfaces
     public interface IAdministrator
     {
         Task UserRegister(User user);
+        Task<IReadOnlyCollection<Log>> GetLogs();
+        Task ExportLog();
 
     }
 }
