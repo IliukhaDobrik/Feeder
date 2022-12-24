@@ -1,8 +1,13 @@
 ﻿using Entities.Feeders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Entities
+namespace BussinesLayer.Dtos
 {
-    public sealed class User
+    public sealed class UserResponseDto
     {
         public Guid UserId { get; set; }
         public string FirstName { get; set; }

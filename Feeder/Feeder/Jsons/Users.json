@@ -1,3 +1,17 @@
-{
-
-}
+[
+  {
+    "UserId": "ce643cf0-0539-4997-bf4d-9071d78061b6",
+    "FirstName": "Dashka",
+    "LastName": "Takarevski",
+    "Email": "zabl19@tut.by",
+    "Feeders": [
+      {
+        "Model": "Nokia",
+        "Capacity": 1000,
+        "Size": 100,
+        "State": "null",
+        "Timetable": null
+      }
+    ]
+  }
+]

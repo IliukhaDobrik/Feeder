@@ -9,9 +9,9 @@ namespace Entities
 {
     public sealed class Timetable
     {
-        public Guid TimeTableId { get; set; }
-        public string TimeTableName { get; set; }
+        public Guid TimetableId { get; set; }
+        public string TimetableName { get; set; }
         public DateTime Date { get; set; }
-        public Feeder TypeFeeder { get; set; }
+        public Feeder FeederType { get; set; }
     }
 }

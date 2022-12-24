@@ -1,6 +1,7 @@
 ﻿using DataLayer.Interfaces;
 using DataLayer.Repositories.Interfaces;
 using Entities;
+using Entities.Feeders;
 using Exceptions;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,8 @@ namespace DataLayer.Repositories
 
             users.Add(entity);
 
+            WriteUsers(users).GetAwaiter();
+
             return Task.CompletedTask;
         }
 
@@ -61,18 +64,30 @@ namespace DataLayer.Repositories
 
             users.Remove(entity);
 
+            WriteUsers(users).GetAwaiter();
+
             return Task.CompletedTask;
         }
 
         public void Update(User entity)
         {
-            throw new NotImplementedException();
+            var users = GetAll().GetAwaiter().GetResult().ToList();
+
+            var user = users.Find(x => x.UserId == entity.UserId);
+
+            user.Feeders = new List<Feeder>(entity.Feeders);
+
+            WriteUsers(users).GetAwaiter();
         }
 
-        public Task Save()
+        private Task WriteUsers(IEnumerable<User> users)
         {
-            throw new NotImplementedException();
+            return _fileManager.Write(_fileSystemPathProvider.GetUsersPath(),
+                                      JsonSerializer.Serialize(users,
+                                                               new JsonSerializerOptions
+                                                               {
+                                                                   WriteIndented = true,
+                                                               }));
         }
-
     }
 }

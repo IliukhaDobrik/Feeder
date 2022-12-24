@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BussinesLayer.Interfaces
 {
-    public interface IUser
+    public interface IUserService
     {
-        Task AddFeeder(Feeder feeder);
+        Task AddFeeder(Guid userId, FeederRequestDto feeder);
         Task AddMark(string mark);
         Task CreateTimetable();
         Task<TimetableDto> GetTimetable(string nameOfTimetable);
