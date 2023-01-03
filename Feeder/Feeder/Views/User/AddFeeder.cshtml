@@ -1,0 +1,29 @@
+﻿@model FeederViewModel
+
+@{
+    ViewData["Title"] = "AddFeederPage";
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>UserId</label>
+        <input asp-for="UserId" class="form-control" placeholder="UserId">
+    </div> <br>
+    <div class="form-group">
+        <label>Model</label>
+        <input asp-for="Model" class="form-control" placeholder="Model">
+    </div> <br>
+    <div class="form-group">
+        <label>Size</label>
+        <input asp-for="Size" class="form-control" placeholder="Size">
+    </div> <br>
+    <div class="form-group">
+        <label>Capacity</label>
+        <input asp-for="Capacity" class="form-control" placeholder="Capacity">
+    </div> <br>
+    <div class="form-group">
+        <label>Type</label>
+        <input asp-for="Type" class="form-control" placeholder="Type">
+    </div> <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
